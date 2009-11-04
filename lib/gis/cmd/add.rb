@@ -1,5 +1,3 @@
-require 'rubygems'
-require 'git_store'
 require 'tempfile'
 require 'digest/md5'
 
@@ -8,7 +6,7 @@ class Gis
         class Add
             def initialize app, args, options
                 @app = app
-                @store = GitStore.new(@app.git_repos.to_s)
+                @store = Gis::Store.new(@app.git_repos.to_s)
             end
 
             def run

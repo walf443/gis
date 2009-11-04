@@ -24,6 +24,8 @@ class Gis
     end
 end
 
+require 'gis/store'
+
 if $0 == __FILE__
     Gis.new(ARGV).run
 end

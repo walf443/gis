@@ -1,5 +1,3 @@
-require 'rubygems'
-require 'git_store'
 require 'tempfile'
 require 'digest/md5'
 
@@ -11,7 +9,7 @@ class Gis
                 @key = args.shift or
                     raise ArgumentError
 
-                @store = GitStore.new(@app.git_repos.to_s)
+                @store = Gis::Store.new(@app.git_repos.to_s)
             end
 
             def run
