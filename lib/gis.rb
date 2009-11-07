@@ -22,6 +22,10 @@ class Gis
         klass = eval "#{self.class}::Cmd::#{name.capitalize}" # FIXME
         klass.new self, args, options
     end
+
+    def git_cmd
+        "git --git-dir=#{@git_repos.to_s}/.git"
+    end
 end
 
 require 'gis/store'
